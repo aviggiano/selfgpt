@@ -2,7 +2,7 @@
 
 set -eux
 
-sudo yum install -y wget unzip libX11 git procps-ng
+sudo yum install -y wget unzip libX11 git procps-ng make
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
 sudo yum install -y google-chrome-stable_current_x86_64.rpm

@@ -1,0 +1,14 @@
+{
+  "name": "selfgpt",
+  "version": "1.0.0",
+  "description": "Talk to yourself with ChatGPT on WhatsApp",
+  "main": "src/index.ts",
+  "repository": "git@github.com:aviggiano/selfgpt.git",
+  "author": "Antonio Guilherme Ferreira Viggiano <agfviggiano@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@open-wa/wa-automate": "^4.64.5",
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1"
+  }
+}

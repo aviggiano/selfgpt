@@ -6,6 +6,9 @@
   "repository": "git@github.com:aviggiano/selfgpt.git",
   "author": "Antonio Guilherme Ferreira Viggiano <agfviggiano@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "npx ts-node src/index.ts"
+  },
   "dependencies": {
     "@open-wa/wa-automate": "^4.64.5",
     "dotenv": "^16.0.3",

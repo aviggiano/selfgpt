@@ -28,14 +28,17 @@ export async function handle(message: Message, client: Client) {
       case "/gpt3": {
         console.log("Changing model...");
         model = "gpt-3.5-turbo";
+        break;
       }
       case "/gpt4": {
         console.log("Changing model...");
         model = "gpt-4";
+        break;
       }
       case "/clear": {
         console.log("Clearing chat...");
         await client.clearChat(message.chatId);
+        break;
       }
     }
     return message;

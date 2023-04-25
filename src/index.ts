@@ -11,7 +11,10 @@ const launchConfig = {
 
 function start(client: Client) {
   client.onAnyMessage(async (message) => {
-    if (message.chat?.formattedTitle === config.chatName) {
+    if (
+      message.chat?.formattedTitle &&
+      config.chatNames.includes(message.chat?.formattedTitle)
+    ) {
       try {
         await handle(message, client);
       } catch (err) {

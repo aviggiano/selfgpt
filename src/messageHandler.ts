@@ -4,9 +4,9 @@ import { Client, Message } from "@open-wa/wa-automate";
 
 const openai = new OpenAIApi(new Configuration({ apiKey: config.apiKey }));
 
-const processedMessages: string[] = [];
-
+let processedMessages: string[] = [];
 let model = "gpt-3.5-turbo";
+
 const commands = ["/gpt3", "/gpt4", "/clear"];
 
 export async function handle(message: Message, client: Client) {
@@ -38,6 +38,7 @@ export async function handle(message: Message, client: Client) {
       case "/clear": {
         console.log("Clearing chat...");
         await client.clearChat(message.chatId);
+        processedMessages = []
         break;
       }
     }

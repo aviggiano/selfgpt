@@ -2,6 +2,8 @@
 
 Talk to yourself with ChatGPT on WhatsApp
 
+![Screenshot 2023-04-27 at 18 52 47](https://user-images.githubusercontent.com/3029017/234999625-3b91e963-f2a3-40cc-9ab9-137dee966d96.png)
+
 # Instructions
 
 1. Add your credentials to a `.env` file

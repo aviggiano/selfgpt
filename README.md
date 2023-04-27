@@ -14,3 +14,11 @@ CHAT_NAME=SelfGPT
 ```
 
 2. Create a group with yourself called `CHAT_NAME` and start sending messages
+
+# Commands
+
+```
+/gpt3
+/gpt4
+/clear
+```

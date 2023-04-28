@@ -3,18 +3,17 @@ import config from "./config";
 import { Client, Message } from "@open-wa/wa-automate";
 
 const openai = new OpenAIApi(new Configuration({ apiKey: config.apiKey }));
+const prefix = `SelfGPT: `;
 
 let processedMessages: string[] = [];
 let model = "gpt-3.5-turbo";
 
-const commands = ["/gpt3", "/gpt4", "/clear"];
+const commands = ["/gpt3", "/gpt4", "/clear", "/selfgpt"];
 
 export async function handle(message: Message, client: Client) {
-  const chatName = message.chat?.formattedTitle!;
-  const prefix = `${chatName}: `;
   if (
     processedMessages.includes(message.id) ||
-    message.text.startsWith(chatName)
+    message.text.startsWith(prefix)
   )
     return message;
   processedMessages.push(message.id);
@@ -41,6 +40,11 @@ export async function handle(message: Message, client: Client) {
         processedMessages = []
         break;
       }
+      case '/selfgpt': {
+        console.log("Open chat...");
+        text = message.text.replace('/selfgpt ', '')
+        break;
+      }
     }
     return message;
   }
@@ -48,7 +52,7 @@ export async function handle(message: Message, client: Client) {
   const messages = (await client.getGptArray(message.chatId, 10)).map(
     (message) => ({
       ...message,
-      content: message.content.replace(prefix, ""),
+      content: message.content.replace(prefix, "").replace('/selfgpt ', ''),
     })
   );
 

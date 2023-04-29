@@ -13,7 +13,7 @@ function start(client: Client) {
   client.onAnyMessage(async (message) => {
     const isApprovedChat = message.chat?.formattedTitle &&
       config.chatNames.includes(message.chat?.formattedTitle)
-    const isApprovedMessage = message.text.startsWith('/selfgpt') && message.fromMe
+    const isApprovedMessage = message.text?.startsWith('/selfgpt') && message.fromMe
     if (isApprovedChat || isApprovedMessage) {
       try {
         await handle(message, client);
